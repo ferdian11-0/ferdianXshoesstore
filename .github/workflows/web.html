@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>RUNNER'S</title>
+<style>
+/* ===== Umum ===== */
+body { font-family: Arial, sans-serif; margin:0; padding:0; scroll-behavior: smooth; }
+header, nav, section, footer { padding:20px; }
+h1, h2 { margin:0 0 15px 0; }
+
+/* ===== Header ===== */
+header {
+    background: linear-gradient(135deg, #3e909e, #2e568b);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+header h1 { font-size: 3em; animation: fadeIn 1s ease-in-out; }
+header p { font-size: 1.2em; animation: fadeIn 2s ease-in-out; }
+
+/* ===== Animasi ===== */
+@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+
+/* ===== Navigasi ===== */
+nav {
+    background-color: #333;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+nav a {
+    color:white;
+    text-decoration:none;
+    margin: 0 15px;
+    padding: 10px;
+    display: inline-block;
+    transition: 0.3s;
+}
+nav a:hover {
+    background-color: #575757;
+    transform: scale(1.1);
+    border-radius: 5px;
+}
+
+/* ===== Section ===== */
+section { padding:50px 20px; text-align:center; }
+#about { background-color: #f9f9f9; }
+#services { background-color: #35c2d4; }
+#pricing { background-color: #28ccb6; }
+#contact { background-color: #ffffff; }
+
+/* ===== Paket / Card ===== */
+.pricing { display: flex; justify-content: center; flex-wrap: wrap; gap:20px; }
+.card {
+    background-color:white;
+    padding:25px;
+    border-radius:15px;
+    width:250px;
+    text-align:center;
+    box-shadow:0 4px 6px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow:0 8px 16px rgba(0,0,0,0.3);
+}
+.card h3 { color:#4CAF50; margin-bottom:10px; }
+.card .btn { margin-top:15px; display:inline-block; }
+
+/* ===== Tombol ===== */
+.btn {
+    background-color: #FF6347;
+    color:white;
+    padding:10px 20px;
+    text-decoration:none;
+    border-radius:5px;
+    transition: 0.3s;
+}
+.btn:hover {
+    background-color:#e5533d;
+    transform: scale(1.1);
+}
+
+/* ===== Form ===== */
+form { max-width:500px; margin:auto; text-align:left; }
+input, textarea {
+    width:100%; padding:10px; margin:10px 0; border-radius:5px; border:1px solid #ccc; transition:0.3s;
+}
+input:focus, textarea:focus { border-color:#4CAF50; box-shadow:0 0 5px #4CAF50; outline:none; }
+input[type="submit"] {
+    background-color:#4CAF50; color:white; border:none; cursor:pointer;
+    transition:0.3s;
+}
+input[type="submit"]:hover { background-color:#45a049; transform: scale(1.05); }
+
+/* ===== Footer ===== */
+footer { background-color:#333; color:white; text-align:center; padding:20px 0; }
+
+/* ===== Responsive ===== */
+@media(max-width:768px){ .pricing{flex-direction:column;align-items:center;} }
+</style>
+<script>
+function submitForm(event) {
+    event.preventDefault();
+    let nama = document.getElementById('nama').value;
+    let email = document.getElementById('email').value;
+    let pesan = document.getElementById('pesan').value;
+    if(!nama || !email || !pesan){
+        alert("Harap isi semua data!");
+        return;
+    }
+    alert(`Pesan berhasil dikirim!\nNama: ${nama}\nEmail: ${email}\nPesan: ${pesan}`);
+}
+</script>
+</head>
+<body>
+
+<header>
+    <h1>Use your shoes for running</h1>
+    <p>Sepatu dengan kenyamanan untuk berlari</p>
+    <a href="#contact" class="btn">Check Out NOW</a>
+</header>
+
+<nav>
+    <a href="#about">Tentang</a>
+    <a href="#services">Layanan</a>
+    <a href="#pricing">Paket</a>
+    <a href="#contact">Kontak</a>
+</nav>
+
+<section id="about">
+    <h2>Tentang Jasa Kami</h2>
+    <p style="max-width:600px; margin:auto;">
+        Kami menyediakan sebuah sepatu lari dengan kenyamanan dan sirkulasi udara pada kaki yang sangat optilmal
+    </p>
+</section>
+
+<section id="services">
+    <h2>Layanan Kami</h2>
+    <ul style="max-width:600px; margin:auto; list-style-type:disc; text-align:left;">
+        <li>Menjual sepatu kualitas tinggi</li>
+        <li>Memberikan sebuah kenyamanan</li>
+        <li>Memberikan garansi setiap barang</li>
+        <li>Sepatu dengan teknologi tinggi</li>
+    </ul>
+</section>
+
+<section id="pricing">
+    <h2>Paket & Harga</h2>
+    <div class="pricing">
+        <div class="card">
+            <h3>K500 Grip</h3>
+            <img src="kiprun.jpg" width="100">
+            <p>Rp 700.000</p>
+            <p>Trail Run Shoes</p>
+            <a href="#contact" class="btn">Pesan</a>
+        </div>
+        <div class="card">
+            <h3>Nineten Aurora</h3>
+            <img src="aurora.jpeg" width="100">
+            <p>Rp 450.000</p>
+            <p>Running Shoes</p>
+            <a href="#contact" class="btn">Pesan</a>
+        </div>
+        <div class="card">
+            <h3>Adidas Evo SL</h3>
+            <img src="28117128_57873235_1000.jpg" width="100">
+            <p>Rp 2.500.000</p>
+            <p>Running Shoes</p>
+            <a href="#contact" class="btn">Pesan</a>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Kontak / Pemesanan</h2>
+    <form onsubmit="submitForm(event)">
+        <input type="text" id="nama" placeholder="Nama Anda">
+        <input type="email" id="email" placeholder="Email Anda">
+        <textarea id="pesan" placeholder="Tuliskan pesan / permintaan jasa"></textarea>
+        <input type="submit" value="Kirim Pesan">
+    </form>
+</section>
+
+<footer>
+    <p>Copyright 2025 - RUNNER'S</p>
+</footer>
+
+</body>
+</html>
